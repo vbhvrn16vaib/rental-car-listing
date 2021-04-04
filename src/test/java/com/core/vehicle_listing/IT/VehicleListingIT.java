@@ -12,6 +12,7 @@ import com.core.vehicle_listing.repository.MemRepository;
 import com.core.vehicle_listing.service.VehicleListingService;
 import java.io.IOException;
 import java.util.Objects;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -48,14 +49,14 @@ class VehicleListingIT {
     );
 
     mockMvc
-        .perform(MockMvcRequestBuilders.multipart("/upload/csv/dx").file(file))
+        .perform(MockMvcRequestBuilders.multipart("/upload/csv/fx").file(file))
         .andExpect(d -> {
           Assertions.assertNotNull(d.getResponse());
           Assertions.assertTrue(Boolean.parseBoolean(d.getResponse().getContentAsString()));
         });
 
     mockMvc
-        .perform(MockMvcRequestBuilders.get("/vendor_listings/dx"))
+        .perform(MockMvcRequestBuilders.get("/vendor_listings/fx"))
         .andExpect(status().isOk())
         .andExpect(d -> {
           Assertions.assertNotNull(d.getResponse());
@@ -95,7 +96,7 @@ class VehicleListingIT {
   @Test
   void shouldBeAbleToSearchWithQueryParams() throws Exception {
     mockMvc
-        .perform(MockMvcRequestBuilders.post("/vendor_listings/dx")
+        .perform(MockMvcRequestBuilders.post("/vendor_listings/ddx")
             .content("[\n"
                 + "    {\n"
                 + "        \"code\": \"acb\",\n"

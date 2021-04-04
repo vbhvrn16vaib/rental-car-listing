@@ -8,9 +8,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+@Slf4j
 @Component("csv")
 public class CSVFileToVehicleDetails implements FileToObjectService {
 
@@ -45,7 +47,7 @@ public class CSVFileToVehicleDetails implements FileToObjectService {
                 .build();
           }).collect(Collectors.toList());
     } catch (IOException e) {
-      e.printStackTrace();
+      log.error("Failed to load from csv file !!");
     }
     return List.of();
   }

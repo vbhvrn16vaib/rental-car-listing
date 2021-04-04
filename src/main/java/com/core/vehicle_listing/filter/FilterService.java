@@ -32,28 +32,28 @@ public class FilterService {
             .reduce(predicate != null ? predicate : t -> true, Predicate::and);
     }
 
-    Predicate<VehicleDetails> filterMake(Map<String,String> v){
+    private Predicate<VehicleDetails> filterMake(Map<String,String> v){
         String val = v.get("make");
       return vd -> vd.getMake().equalsIgnoreCase(val);
     }
 
-    Predicate<VehicleDetails> filterModel(Map<String,String> v){
+    private Predicate<VehicleDetails> filterModel(Map<String,String> v){
         String val = v.get("model");
         return vd -> vd.getModel().equalsIgnoreCase(val);
     }
 
-    Predicate<VehicleDetails> filterColor(Map<String,String> v){
+    private Predicate<VehicleDetails> filterColor(Map<String,String> v){
         String val = v.get("color");
         return vd -> vd.getColor().equalsIgnoreCase(val);
     }
 
-    Predicate<VehicleDetails> filterYear(Map<String,String> v){
+    private Predicate<VehicleDetails> filterYear(Map<String,String> v){
         Long to = Long.parseLong(v.get("to"));
         Long from = Long.parseLong(v.get("from"));
         return vd -> vd.getYear() >= from && vd.getYear() <= to;
     }
 
-    Predicate<VehicleDetails> filterYearWithEquality(Map<String,String> v){
+    private Predicate<VehicleDetails> filterYearWithEquality(Map<String,String> v){
         Long val = Long.valueOf(v.get("year"));
         return vd -> vd.getYear().equals(val);
     }

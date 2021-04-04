@@ -1,0 +1,15 @@
+version: '2'
+services:
+  vehicle_listing:
+#    container_name: vehicle_listing
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vehicle_listing:latest
+    ports:
+      - 8080-8085:8080
+    networks:
+      - my-network
+networks:
+  my-network:
+    driver: bridge

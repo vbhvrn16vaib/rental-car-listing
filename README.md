@@ -14,11 +14,11 @@ This is an application built with java 15 and spring boot. We can do following o
 
 *  run the application using docker-compose
    
-    ####console mode
+    console mode
     ```text
      docker-compose up --build
     ```
-   ####detach mode
+   detach mode
     ```text
      docker-compose up --build -d
     ```    

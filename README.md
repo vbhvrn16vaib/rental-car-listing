@@ -36,3 +36,11 @@ This is an application built with java 15 and spring boot. We can do following o
 * GET `/search?make={query}&color={query}` -> should be able to filter by make and color by using query params
 * POST `/upload/csv/{dealer_id}` -> should be able to upload csv with dealers listing
 * POST `/vendors_listing/{dealer_id}`-> should be able to post listing (json api)
+
+# From Dockerhub
+
+If too lazy to download everything and run then we can also use dockerhub. Just run the latest image by using below command
+```
+docker run -p 8080:8080 shankeytcs/vehicle-listing:latest
+```
+

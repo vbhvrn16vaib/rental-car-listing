@@ -39,7 +39,7 @@ This is an application built with java 15 and spring boot. We can do following o
 
 # From Dockerhub
 
-If too lazy to download everything and run then we can also use dockerhub. Just run the latest image by using below command
+If too lazy to download everything and run..  then we can also use dockerhub. Just run the latest image by using below command
 ```
 docker run -p 8080:8080 shankeytcs/vehicle-listing:latest
 ```

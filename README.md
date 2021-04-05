@@ -4,6 +4,7 @@ This is an application built with java 15 and spring boot. We can do following o
 # Dependencies:
 - maven
 - java 15
+- docker
 
 # Run
 * Build the jar file using mvn command 

@@ -29,12 +29,12 @@ public class VehicleListingController {
     return ResponseEntity.ok(vehicleListingService.saveFromFile(file, type, dealerId));
   }
 
-  @PostMapping("/vendor_listings/{dealer_id}")
+  @PostMapping("/vehicle_listings/{dealer_id}")
   public ResponseEntity<?> uploadListings(@RequestBody List<VehicleDetails> request, @PathVariable("dealer_id") String dealerId){
     return ResponseEntity.ok(vehicleListingService.save(request, dealerId));
   }
 
-  @GetMapping("/vendor_listings/{dealer_id}")
+  @GetMapping("/vehicle_listings/{dealer_id}")
   public ResponseEntity<?> getByDealersId(@PathVariable("dealer_id") String dealerId){
     return ResponseEntity.ok(vehicleListingService.getAllListingOfDealer(dealerId));
   }

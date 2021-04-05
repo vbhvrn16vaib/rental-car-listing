@@ -47,7 +47,7 @@ public class CSVFileToVehicleDetails implements FileToObjectService {
                 .build();
           }).collect(Collectors.toList());
     } catch (IOException e) {
-      log.error("Failed to load from csv file !!");
+      log.error("Failed to load from csv file !!", e);
     }
     return List.of();
   }

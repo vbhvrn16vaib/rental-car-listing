@@ -26,7 +26,7 @@ public class MemRepository {
           .put(vehicleDetails.getCode(),vehicleDetails);
       return true;
     }catch (Exception e){
-      log.error("Failed to save to database ");
+      log.error("Failed to save to database ", e);
     }
     return false;
   }
